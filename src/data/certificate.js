@@ -22,5 +22,12 @@ const certificate = [
     platform: "NxtWave",
     link: "https://www.ccbp.in/ai-workshop-certificate?par=VLIM4J9AXB"
   },
+  // {
+  //   id: 4,
+  //   icon: "bi-code-slash",
+  //   title: "Full Stack Java Development",
+  //   platform: "Kompetenzen Technologies",
+  //   link: "https://www.ccbp.in/ai-workshop-certificate?par=VLIM4J9AXB"
+  // },
 ];
 export default certificate;

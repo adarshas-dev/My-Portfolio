@@ -1,72 +1,144 @@
 import { useState } from "react";
+import NavLink from "./NavLink";
 
 function Navbar() {
-  const [active, setActive] = useState("Home");
-
-  const baseClass =
-    "flex items-center gap-2 rounded-full py-2 px-4 text-sm font-medium transition";
-  const activeClass = "bg-[#8851efee] text-white shadow-[0_0_30px_rgba(127,77,227,0.5)] scale-105";
-  const inactiveClass = "text-white hover:bg-[#7146c1ee] hover:scale-105 transition";
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-6 flex justify-center z-50 ">
-      <nav className=" flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-xl py-2 px-6  shadow-[0_0_30px_rgba(127,77,227,0.1)] border border-white/5">
-        <a
-          href="#home"
-          onClick={() => setActive("Home")}
-          className={`${baseClass} ${
-            active === "Home" ? activeClass : inactiveClass
-          }`}
-        >
-          <i className="fa-solid fa-house text-xs"></i>
-          Home
-        </a>
+    <>
+      {/* NAVBAR */}
+      <nav
+        className="
+        fixed top-0 left-0 w-full z-50
 
-        <a
-          href="#about"
-          onClick={() => setActive("About")}
-          className={`${baseClass} ${
-            active === "About" ? activeClass : inactiveClass
-          }`}
-        >
-          <i className="fa-solid fa-address-card"></i>
-          About
-        </a>
+        bg-gradient-to-b
+        from-black via-black/80 to-transparent"
+      >
 
-        <a
-          href="#projects"
-          onClick={() => setActive("Projects")}
-          className={`${baseClass} ${
-            active === "Projects" ? activeClass : inactiveClass
-          }`}
-        >
-          <i className="fa-solid fa-diagram-project"></i>
-          Projects
-        </a>
+        <div
+          className="
+          max-w-7xl mx-auto
 
-        <a
-          href="#skills"
-          onClick={() => setActive("Skills")}
-          className={`${baseClass} ${
-            active === "Skills" ? activeClass : inactiveClass
-          }`}
-        >
-          <i className="fa-solid fa-laptop"></i>
-          Skills
-        </a>
+          px-4 md:px-6
+          py-6 md:py-8
 
-        <a
-          href="#contact"
-          onClick={() => setActive("Contact")}
-          className={`${baseClass} ${
-            active === "Contact" ? activeClass : inactiveClass
-          }`}
+          flex justify-between items-center"
         >
-          <i className="fa-solid fa-address-book"></i>
-          Contact
-        </a>
+
+          {/* LOGO */}
+          <h1
+            className="
+            text-lg md:text-2xl
+            font-bold tracking-widest
+            text-white"
+          >
+            Adarsh
+          </h1>
+
+          {/* DESKTOP MENU */}
+          <div
+            className="
+            hidden md:flex
+            gap-6 lg:gap-8
+            uppercase font-semibold"
+          >
+            <NavLink href="#home" text="Home" />
+            <NavLink href="#about" text="About" />
+            <NavLink href="#projects" text="Projects" />
+            <NavLink href="#skills" text="Skills" />
+            <NavLink href="#contact" text="Contact" />
+          </div>
+
+          {/* MOBILE BUTTON */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="
+            md:hidden
+
+            relative z-50
+
+            flex flex-col justify-center items-center
+            gap-1.5
+
+            w-10 h-10"
+          >
+
+            <span
+              className={`
+              block h-[2px] w-6 bg-white
+              transition duration-300
+
+              ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}
+            `}
+            ></span>
+
+            <span
+              className={`
+              block h-[2px] w-6 bg-white
+              transition duration-300
+
+              ${menuOpen ? "opacity-0" : ""}
+            `}
+            ></span>
+
+            <span
+              className={`
+              block h-[2px] w-6 bg-white
+              transition duration-300
+
+              ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}
+            `}
+            ></span>
+
+          </button>
+
+        </div>
+
       </nav>
-    </header>
+
+      {/* MOBILE OVERLAY MENU */}
+      <div
+        className={`
+        fixed inset-0 z-40
+
+        flex flex-col items-center justify-center
+        gap-10
+
+        bg-black/90 backdrop-blur-2xl
+
+        transition-all duration-500
+
+        ${menuOpen
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"}
+      `}
+      >
+
+        {[
+          "Home",
+          "About",
+          "Projects",
+          "Skills",
+          "Contact",
+        ].map((item, index) => (
+          <a
+            key={index}
+            href={`#${item.toLowerCase()}`}
+            onClick={() => setMenuOpen(false)}
+            className="
+            text-3xl font-light tracking-wide
+            text-white/70
+
+            transition duration-300
+            hover:text-[#8b5cf6]
+            hover:scale-105"
+          >
+            {item}
+          </a>
+        ))}
+
+      </div>
+    </>
   );
 }
 

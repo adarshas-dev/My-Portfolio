@@ -3,20 +3,40 @@ import projects from "../data/projects";
 
 function Projects() {
   return (
-    <section className="px-6 mt-52">
-      <div className="max-w-[1400px] w-full mx-auto">
+    <section id="projects" className=" px-4 sm:px-6 md:px-12 py-20 md:py-28 ">
+      <div className=" max-w-6xl md:max-w-7xl w-full mx-auto">
+        <div className="relative w-fit mx-auto ">
+          {/* glow layer */}
+          <div
+            className="absolute inset-0
+    blur-3xl opacity-40
+    bg-gradient-to-r
+    from-[#8b5cf6]
+    via-[#6366f1]
+    to-[#06b6d4]"
+          ></div>
 
-        <h2 className="text-6xl font-bold text-center mb-10 block mx-auto underline underline-offset-20 decoration-[#8851efee] decoration-1 w-fit 
-        bg-gradient-to-r  from-[#20e0f9ec] via-[#4593f3ee] to-[#8851efee] bg-clip-text text-transparent">
-          Featured Projects
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-15">
-          {projects.map(project => (
-            <ProjectCard key={project.id} {...project} />
-          ))}
+          {/* heading */}
+          <h2
+            className="relative
+    text-4xl sm:text-5xl md:text-7xl
+    font-black tracking-tight
+    text-white"
+          >
+            Featured Projects
+          </h2>
         </div>
 
+        <div className="max-w-7xl mx-auto">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              {...project}
+              index={index}
+              reverse={index % 2 !== 0}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
