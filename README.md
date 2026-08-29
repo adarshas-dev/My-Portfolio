@@ -4,7 +4,7 @@ A modern cinematic developer portfolio built with React and Tailwind CSS, featur
 
 ## 🚀 Live Demo
 
-🔗 https://my-portfolio-git-main-adarshs-projects-a13293ae.vercel.app/
+🔗 https://adarshdev-portfolio.vercel.app/
 
 ---
 
