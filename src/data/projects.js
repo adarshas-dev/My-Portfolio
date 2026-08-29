@@ -3,10 +3,28 @@ import weather from "../assets/images/weather.png";
 import portfolio from "../assets/images/portfolio.png";
 import ticketsystem from "../assets/images/ticket-management-system.png";
 import resume from "../assets/images/tailwind-portfolio.png";
+import coginai from "../assets/images/coginai.png";
 
 const projects = [
-  {
+    {
     id: 1,
+    title: "CogIn — AI-Powered Learning Platform",
+    description:
+      "A full-stack AI-powered learning platform that transforms study materials into interactive flashcards and quizzes using Google Gemini AI. Built with React and Spring Boot, featuring JWT authentication, PDF uploads, study mode, quiz mode, and progress tracking.",
+    image: coginai,
+    tags: [
+      "React",
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "JWT",
+      "Google Gemini AI",
+    ],
+    github: "https://github.com/adarshas-dev/cognitive-ai",
+    demo: "https://coginai.netlify.app",
+  },
+  {
+    id: 2,
     title: "Ticket Management System",
     description:
       "A full-stack role-based ticket management platform built with Spring Boot, React, and MySQL, featuring JWT authentication, automated ticket assignment, real-time ticket workflows, dashboards, comments, and secure role-based access for Admins, Agents, and Users.",
@@ -24,7 +42,7 @@ const projects = [
     demo: "https://ticket-management-system-tawny.vercel.app",
   },
   {
-    id: 2,
+    id: 3,
     title: "Personal Portfolio",
     description:
       "A modern cinematic developer portfolio built with React and Tailwind CSS, featuring immersive UI animations, interactive layouts, glowing visual effects, responsive design, and smooth user interactions.",
@@ -40,7 +58,7 @@ const projects = [
     demo: "https://adarshas-dev.github.io/portfolio/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Weather App",
     description:
       "A modern React-based weather application that provides real-time weather data, interactive map-based location tracking, dynamic weather visuals, and dark/light mode support with a responsive user interface.",
@@ -56,22 +74,22 @@ const projects = [
     demo: "https://weathery-web-app.vercel.app",
   },
 
-{
-  id: 4,
-  title: "To-Do List App",
-  description:
-    "A clean and responsive task management application built with Vanilla JavaScript, featuring dynamic task handling, DOM manipulation, task completion tracking, and an intuitive user interface for managing daily activities.",
-  image: todo,
-  tags: [
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "DOM Manipulation",
-    "Responsive UI"
-  ],
-  github: "https://github.com/adarshas-dev/todo-list",
-  demo: "https://adarshas-dev.github.io/todo-list/",
-},
+// {
+//   id: 4,
+//   title: "To-Do List App",
+//   description:
+//     "A clean and responsive task management application built with Vanilla JavaScript, featuring dynamic task handling, DOM manipulation, task completion tracking, and an intuitive user interface for managing daily activities.",
+//   image: todo,
+//   tags: [
+//     "JavaScript",
+//     "HTML5",
+//     "CSS3",
+//     "DOM Manipulation",
+//     "Responsive UI"
+//   ],
+//   github: "https://github.com/adarshas-dev/todo-list",
+//   demo: "https://adarshas-dev.github.io/todo-list/",
+// },
 ];
 
 export default projects;
