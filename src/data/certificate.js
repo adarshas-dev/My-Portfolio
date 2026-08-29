@@ -1,6 +1,13 @@
 const certificate = [
   {
     id: 1,
+    icon: "bi-code-slash",
+    title: "Full Stack Java Development",
+    platform: "Kompetenzen Technologies",
+    link: "https://drive.google.com/file/d/1WgFSqCmjzcUhmzUANxbnd8zLUXWt6-73/view?usp=drive_link"
+  },
+  {
+    id: 2,
     icon: "fa-brands fa-java",
     title: "Java Programming",
     platform: "Infosys Springboard",
@@ -8,7 +15,7 @@ const certificate = [
   },
   
   {
-    id: 2,
+    id: 3,
     icon: "fa-solid fa-server",
     title: "Data Visualisation",
     platform: "Tata Group",
@@ -16,18 +23,12 @@ const certificate = [
   },
   
   {
-    id: 3,
+    id: 4,
     icon: "fa-solid fa-brain",
     title: "Generative AI",
     platform: "NxtWave",
     link: "https://www.ccbp.in/ai-workshop-certificate?par=VLIM4J9AXB"
   },
-  {
-    id: 4,
-    icon: "bi-code-slash",
-    title: "Full Stack Java Development",
-    platform: "Kompetenzen Technologies",
-    link: "https://drive.google.com/file/d/1WgFSqCmjzcUhmzUANxbnd8zLUXWt6-73/view?usp=drive_link"
-  },
+  
 ];
 export default certificate;
